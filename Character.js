@@ -18,7 +18,6 @@ class Character extends Entity {
             label: this.key,
             density: 10
         });
-        this.group = 'character';
     }
 
     tick() {
