@@ -2,6 +2,7 @@ import './lib/matter.js';
 import Entity from "./Entity.js";
 import { keyMap } from "./lib/keyMap.js";
 import collisions from './collisions.js';
+import getByGroup from './lib/getByGroup.js'
 
 class Bob extends Entity{
     constructor() {
@@ -32,9 +33,13 @@ class Bob extends Entity{
 
         }
         
-        if (keyMap["ArrowUp"] === true){
+        
 
-            Matter.Body.applyForce(this.body, this.body.position, {x: 0, y: -10})
+        if {Matter.Query.collides(this.body, getByGroup("platform").bodies).length > 0}{
+            if (keyMap["ArrowUp"] === true){
+
+                Matter.Body.applyForce(this.body, this.body.position, {x: 0, y: -10})
+            }
         }
     }
 }

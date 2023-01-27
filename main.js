@@ -23,8 +23,8 @@ function main() {
         element: document.body,
         engine: engine,
         options: {
-            width: 800,
-            height: 640,
+            width: 2000,
+            height: 900,
             wireframes: false
         }
     });
@@ -57,6 +57,18 @@ function main() {
 
     const ground = new Platform(100, 600, 400, 30);
     ground.add();
+
+    const Platform1 = new Platform(600, 400, 400, 30);
+    Platform1.add();
+
+    const Platform2 = new Platform(1000, 500, 400, 30);
+    Platform2.add();
+    
+    const Platform3 = new Platform(1400, 300, 400, 30);
+    Platform3.add();
+    
+    const Platform4 = new Platform(1800, 800, 400, 30);
+    Platform4.add();
 
     const myplayer = new Bob()
     myplayer.add();
