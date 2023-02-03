@@ -13,11 +13,14 @@ class Bob extends Entity{
                 mask: collisions.ground 
             },
             render: {
-                fillStyle: '#1cd1d4'
+                sprite {
+                    texture: 'Icon.png'
+                }
             },
             label: this.key,
             density: 1
-        })
+        });
+        this.group = 'character';
     }
     tick() {
         console.log("hello")
@@ -35,10 +38,10 @@ class Bob extends Entity{
         
         
 
-        if {Matter.Query.collides(this.body, getByGroup("platform").bodies).length > 0}{
+        if (Matter.Query.collides(this.body, getByGroup("platform").bodies).length > 0) {
             if (keyMap["ArrowUp"] === true){
 
-                Matter.Body.applyForce(this.body, this.body.position, {x: 0, y: -10})
+                Matter.Body.applyForce(this.body, this.body.position, {x: 0, y: -100})
             }
         }
     }

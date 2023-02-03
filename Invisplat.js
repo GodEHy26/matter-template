@@ -2,7 +2,7 @@ import './lib/matter.js';
 import Entity from './Entity.js';
 import collisions from './collisions.js';
 
-class Platform extends Entity {
+class Invisplat extends Entity {
     constructor(posX, posY, sizeX, sizeY) {
         super();
 
@@ -12,15 +12,15 @@ class Platform extends Entity {
                 mask: collisions.character // The collision categories this entity collides with
             },
             render: {
-                fillStyle: '#000000'
+                fillStyle: '#ffffff'
             },
             label: this.key
         });
 
         this.static = true;
         
-        this.group = "platform"
+        this.group = "Invisplat"
     }
 }
 
-export default Platform;
+export default Invisplat;

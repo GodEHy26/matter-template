@@ -70,6 +70,12 @@ function main() {
     const Platform4 = new Platform(1800, 800, 400, 30);
     Platform4.add();
 
+    const Invisplat = new Platform(1750, 800, 400, 30);
+    Invisplat.add();
+
+    const Invisplat2 = new Platform(1390, 300, 400, 30);
+    Invisplat2.add();
+
     const myplayer = new Bob()
     myplayer.add();
 
