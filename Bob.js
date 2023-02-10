@@ -13,8 +13,10 @@ class Bob extends Entity{
                 mask: collisions.ground 
             },
             render: {
-                sprite {
-                    texture: 'Icon.png'
+                sprite: {
+                    texture: 'Icon.png',
+                    xScale: "0.4",
+                    yScale: "0.4"
                 }
             },
             label: this.key,

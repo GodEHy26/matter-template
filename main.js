@@ -25,7 +25,8 @@ function main() {
         options: {
             width: 2000,
             height: 900,
-            wireframes: false
+            wireframes: false,
+            background: "#00dbde"
         }
     });
 
@@ -45,6 +46,9 @@ function main() {
     global.bodies = []; // List of physics 'bodies' in the world
     global.entities = []; // List of entities in the world
     global.world = engine.world;
+    global.engine = engine;
+    global.render = render;
+    global.runner = runner;
 
     // Set function to run every game tick
     Matter.Events.on(runner, 'tick', tickCounter);
@@ -81,3 +85,20 @@ function main() {
 
 }
 window.onload = main;
+
+function stop() {
+
+    const { Engine, Render, Runner, Composite, World } = Matter;
+
+    World.clear(global.world);
+    Engine.clear(global.engine);
+    Render.stop(global.render);
+    Runner.stop(global.runner);
+    global.render.canvas.remove();
+    global.render.canvas = null;
+    global.render.context = null;
+    global.render.textures = {};
+
+}
+
+export { stop, main };
