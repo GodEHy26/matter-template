@@ -10,7 +10,7 @@ class Bob extends Entity{
         this.body = Matter.Bodies.rectangle(69, 420, 50, 50, {
             collisionFilter: {
                 category: collisions.character,
-                mask: collisions.ground 
+                mask: collisions.ground | collisions.enemy
             },
             render: {
                 sprite: {
@@ -26,6 +26,11 @@ class Bob extends Entity{
     }
     tick() {
         console.log("hello")
+
+        if (Matter.Queru.collides(this.body, getByGroup("enemy").bodies).length > 0) {
+            consople.log("helloooo")
+            Matter.Body.setPosition(this.body, {x:100, y:100})
+        }
 
         if (keyMap["ArrowRight"] === true){
 

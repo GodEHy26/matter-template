@@ -5,6 +5,7 @@ import { global } from './lib/global.js';
 import Character from './Character.js';
 import Platform from './Platform.js';
 import Bob from './Bob.js';
+import PassiveEnemy from './PassiveEnemy.js'
 
 function main() {
 
@@ -58,6 +59,14 @@ function main() {
     window.addEventListener('keyup', e => keyMapper(e))
 
     // Add entities here
+
+    const mouseConstraint = Matter.MouseConstraint.create(engine)
+    Matter.Events.on(mouseConstraint, "mousedown", function() {
+        console.log(mouseConstraint.constraint.pointA)
+    })
+
+    const Enemy1 = new PassiveEnemy(500, 200)
+    Enemy1.add();
 
     const ground = new Platform(100, 600, 400, 30);
     ground.add();
